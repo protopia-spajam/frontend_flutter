@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spajam2022/screens/Home/index.dart';
 import 'screens/prepare/index.dart';
+import 'screens/result/index.dart';
 
 void main() {
   runApp(const MyApp());

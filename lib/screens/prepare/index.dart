@@ -21,6 +21,10 @@ class _PrepareViewState extends State<PrepareView> {
   }
 
 
+  void post() {
+    /* ボタンがタップされた時の処理 */
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
