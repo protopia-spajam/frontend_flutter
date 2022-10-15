@@ -41,13 +41,13 @@ class ResultView extends StatelessWidget {
                       ),
                       child: CircleAvatar(
                         child: ClipOval(
-                            // child: Image(
-                            //   height: 50.0,
-                            //   width: 50.0,
-                            //   image: AssetImage(posts[index].authorImageUrl),
-                            //   fit: BoxFit.cover,
-                            // ),
-                            ),
+                          child: Image(
+                            height: 50.0,
+                            width: 50.0,
+                            image: AssetImage('assets/images/icon.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                     ),
                     title: Text(

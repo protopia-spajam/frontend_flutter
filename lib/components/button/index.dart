@@ -15,7 +15,7 @@ class Button extends StatelessWidget {
     // );
     return Container(
       margin: EdgeInsets.only(
-        bottom: 10,
+        bottom: 15,
       ),
       width: 200,
       height: 60,

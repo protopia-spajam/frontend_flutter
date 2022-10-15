@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:spajam2022/screens/prepare/index.dart';
 import 'package:spajam2022/components/background/index.dart';
+import 'package:spajam2022/utils/style.dart';
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Colors.grey.shade100,
+        // backgroundColor: Colors.grey.shade100,
+        backgroundColor: kColorPurple,
         body: Stack(
           children: [
             BackGround(),
@@ -16,7 +18,10 @@ class HomeView extends StatelessWidget {
                 children: [
                   // Spacer(),
                   Container(
-                    margin: EdgeInsets.only(top: 100),
+                    margin: EdgeInsets.only(
+                      top: 100,
+                      bottom: 15,
+                    ),
                     child: Image.asset(
                       'assets/images/logo.png',
                       scale: .9,
@@ -86,12 +91,14 @@ class mode_select_button extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 10),
-                      child: Text("$description",
-                          style: TextStyle(
+                      child: Text(
+                        "$description",
+                        style: TextStyle(
                             fontFamily: 'AniFont',
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
-                          )),
+                            color: Colors.grey.shade600),
+                      ),
                     )
                   ],
                 ),

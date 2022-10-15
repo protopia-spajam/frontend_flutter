@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:spajam2022/components/button/index.dart';
@@ -62,9 +61,9 @@ class _PrepareViewState extends State<PrepareView> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => ResultView(
-                            'ずーーーっと、なかよし☺︎',
+                            '制服の思い出🫶',
                             'assets/images/resultImage2.jpeg',
-                            '海デートに行ったときの写真！\nこの後はしゃぎ過ぎて、\nふたりでびしょびしょになったよね笑',
+                            '学校帰りに撮ってもらった写真📷\n毎日一緒に帰るの、\n楽しかったなあ〜！',
                           )));
             },
             child: Button('思い出作成！'),
@@ -93,12 +92,16 @@ class men_women_select extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 500,
-      height: 200,
+      height: 180,
       // const(コンパイル定数)を定義できる
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         color: color.shade100, // Cardの背景色
-        margin: const EdgeInsets.all(30), // Cardの外側の余白を設定するオプション
+        margin: const EdgeInsets.only(
+          right: 30,
+          left: 30,
+          bottom: 40,
+        ), // Cardの外側の余白を設定するオプション
         elevation: 2, // 影の離れ具合を調整するオプション
         shadowColor: Colors.black, // 影の色を設定するオプション
 

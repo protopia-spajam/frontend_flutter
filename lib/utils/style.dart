@@ -8,3 +8,4 @@ const kColorYellow = Color(0xFFFFEA9E);
 const kColorBlue = Color(0xFFCCE0FF);
 
 const kColorCyan = Color(0xFFD2F9F6);
+const kColorPurple = Color(0xFFF5F5FF);
