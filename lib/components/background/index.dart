@@ -8,14 +8,13 @@ class BackGround extends StatelessWidget {
     return Container(
       width: size.width,
       height: size.height,
-      // color: kColorOrange,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: FractionalOffset.topLeft,
           end: FractionalOffset.bottomRight,
           colors: [
-            kColorOrange.withOpacity(0.6),
-            kColorCyan.withOpacity(0.6),
+            kColorOrange.withOpacity(0.4),
+            kColorCyan.withOpacity(0.9),
           ],
           stops: const [
             0.0,
