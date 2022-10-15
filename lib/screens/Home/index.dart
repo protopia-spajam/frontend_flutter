@@ -8,35 +8,36 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        // backgroundColor: Colors.grey.shade100,
-        backgroundColor: kColorPurple,
-        body: Stack(
-          children: [
-            BackGround(),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  // Spacer(),
-                  Container(
-                    margin: EdgeInsets.only(
-                      top: 100,
-                      bottom: 15,
-                    ),
-                    child: Image.asset(
-                      'assets/images/logo.png',
-                      scale: .9,
-                    ),
+      // backgroundColor: Colors.grey.shade100,
+      // backgroundColor: kColorPurple,
+      body: Stack(
+        children: [
+          BackGround(),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                // Spacer(),
+                Container(
+                  margin: EdgeInsets.only(
+                    top: 100,
+                    bottom: 15,
                   ),
-                  mode_select_button("恋人モード", "過去に好きだった人と勝手に付き合いませんか？",
-                      "https://d3cmdai71kklhc.cloudfront.net/post_watermark/marketplace/23717/mp_20161011-130104721_i3hut.jpg"),
-                  mode_select_button("友達・家族モード", "友達・家族との楽しい思い出を作りませんか？",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8rTuqMVFww1hBVW2HRZ90E9RId2o_t3znQw&usqp=CAU"),
-                  // Spacer(),
-                ],
-              ),
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    scale: .9,
+                  ),
+                ),
+                mode_select_button("恋人モード", "過去に好きだった人と勝手に付き合いませんか？",
+                    "https://d3cmdai71kklhc.cloudfront.net/post_watermark/marketplace/23717/mp_20161011-130104721_i3hut.jpg"),
+                mode_select_button("友達・家族モード", "友達・家族との楽しい思い出を作りませんか？",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8rTuqMVFww1hBVW2HRZ90E9RId2o_t3znQw&usqp=CAU"),
+                // Spacer(),
+              ],
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }
 
