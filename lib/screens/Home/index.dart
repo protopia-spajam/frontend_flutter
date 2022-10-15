@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:spajam2022/screens/prepare/index.dart';
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[50],
+        backgroundColor: Colors.grey[200],
         body: SingleChildScrollView(
           child: Center(
               child: Column(
@@ -34,37 +35,46 @@ class mode_select_button extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 500,
-      height: 300,
-      // const(コンパイル定数)を定義できる
-      child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        color: Colors.white, // Cardの背景色
-        margin: const EdgeInsets.all(30), // Cardの外側の余白を設定するオプション
-        elevation: 2, // 影の離れ具合を調整するオプション
-        shadowColor: Colors.black, // 影の色を設定するオプション
-        child: Row(
-          children: <Widget>[
-            Image.network(this.url),
-            Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      Text("$mode_name",
-                          style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
-                      Text("$description",
-                          style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                    ],
-                  ),
-                ))
-          ],
+    return InkWell(
+      child: SizedBox(
+        width: 500,
+        height: 300,
+        // const(コンパイル定数)を定義できる
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          color: Colors.white, // Cardの背景色
+          margin: const EdgeInsets.all(30), // Cardの外側の余白を設定するオプション
+          elevation: 2, // 影の離れ具合を調整するオプション
+          shadowColor: Colors.black, // 影の色を設定するオプション
+          child: Row(
+            children: <Widget>[
+              Image.network(this.url),
+              Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Text("$mode_name",
+                            style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+                        Text("$description",
+                            style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                      ],
+                    ),
+                  ))
+            ],
+          ),
         ),
       ),
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(
+          // （2） 実際に表示するページ(ウィジェット)を指定する
+            builder: (context) => PrepareView()
+        ));
+      },
     );
+
   }
 }

@@ -24,6 +24,7 @@ class _PrepareViewState extends State<PrepareView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       body: Center(
         child: Column(
           children: [
@@ -45,6 +46,12 @@ class _PrepareViewState extends State<PrepareView> {
 
                 },
               child: Text('思い出作成！'),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              child: Text("戻る"),
             ),
             Spacer(),
           ],

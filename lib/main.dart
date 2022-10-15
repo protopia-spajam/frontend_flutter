@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spajam2022/screens/Home/index.dart';
 import 'screens/prepare/index.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PrepareView(),
+      home: HomeView(),
     );
   }
 }
