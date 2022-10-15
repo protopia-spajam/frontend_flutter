@@ -2,11 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:spajam2022/components/button/index.dart';
 
 class ResultView extends StatelessWidget {
-  const ResultView({Key? key}) : super(key: key);
-
-  void handleClick() {
-    /* ボタンがタップされた時の処理 */
+  String title = '';
+  String imageURL = '';
+  String message = '';
+  ResultView(
+    String title,
+    String imageURL,
+    String message,
+  ) {
+    this.title = title;
+    this.imageURL = imageURL;
+    this.message = message;
   }
+
   // 投稿の部分
   Widget _buildPost(int index) {
     return Padding(
@@ -43,7 +51,7 @@ class ResultView extends StatelessWidget {
                       ),
                     ),
                     title: Text(
-                      'ずーーーっと、なかよし❤︎',
+                      title,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -57,26 +65,16 @@ class ResultView extends StatelessWidget {
                   ),
                   InkWell(
                     onDoubleTap: () => print('Like post'),
-                    onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (_) => ViewPostScreen(
-                      //       post: posts[index],
-                      //     ),
-                      //   ),
-                      // );
-                    },
                     child: Container(
                       margin: EdgeInsets.all(5.0),
                       width: double.infinity,
                       height: 400.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
-                        // image: DecorationImage(
-                        //   image: AssetImage(posts[index].imageUrl),
-                        //   fit: BoxFit.fitWidth,
-                        // ),
+                        image: DecorationImage(
+                          image: AssetImage(imageURL),
+                          fit: BoxFit.fitWidth,
+                        ),
                       ),
                     ),
                   ),
@@ -109,16 +107,7 @@ class ResultView extends StatelessWidget {
                                 IconButton(
                                   icon: Icon(Icons.chat),
                                   iconSize: 30.0,
-                                  onPressed: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //     builder: (_) => ViewPostScreen(
-                                    //       post: posts[index],
-                                    //     ),
-                                    //   ),
-                                    // );
-                                  },
+                                  onPressed: () {},
                                 ),
                                 Text(
                                   '350',
@@ -190,10 +179,33 @@ class ResultView extends StatelessWidget {
             ),
           ),
           _buildPost(0),
+          Center(
+            child: Container(
+              margin: EdgeInsets.only(
+                top: 20,
+                right: 5,
+                bottom: 20,
+                left: 5,
+              ),
+              child: Text(
+                message,
+                style: TextStyle(
+                  fontFamily: 'AniFont',
+                  fontSize: 23,
+                ),
+              ),
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Button(),
+              InkWell(
+                onTap: () {
+                  int count = 0;
+                  Navigator.of(context).popUntil((_) => count++ >= 2);
+                },
+                child: Button('ホームにもどる'),
+              ),
             ],
           ),
         ],
