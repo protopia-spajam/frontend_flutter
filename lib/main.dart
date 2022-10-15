@@ -30,7 +30,10 @@ class HomeView extends StatelessWidget {
         child: Center(
             child: Column(
               children: [
-                Image.asset('images/logo.jpg'),
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                  child: Image.asset('assets/images/logo.png'),
+                ),
                 mode_select_button("恋人モード","過去に好きだった人と\n付き合いませんか？","https://d3cmdai71kklhc.cloudfront.net/post_watermark/marketplace/23717/mp_20161011-130104721_i3hut.jpg"),
                 mode_select_button("友達・家族モード","友達・家族との楽しい思い出を\n作りませんか？","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8rTuqMVFww1hBVW2HRZ90E9RId2o_t3znQw&usqp=CAU"),
               ],
