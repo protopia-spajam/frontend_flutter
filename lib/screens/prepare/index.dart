@@ -54,7 +54,12 @@ class _PrepareViewState extends State<PrepareView> {
               const Spacer(),
               Center(
                 child: Container(
-                  margin: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.only(
+                    top: 30,
+                    right: 20,
+                    bottom: 30,
+                    left: 20,
+                  ),
                   child: const Text(
                     '新しく作る思い出の登場人物を設定してください！',
                     style: TextStyle(
