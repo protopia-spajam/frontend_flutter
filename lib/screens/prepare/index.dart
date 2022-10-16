@@ -28,6 +28,7 @@ class _PrepareViewState extends State<PrepareView> {
       image = File(pickedFile!.path);
     });
   }
+
   //デバイスから画像を取得する（女の画像）
   Future getImageFromGallery2() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -63,142 +64,198 @@ class _PrepareViewState extends State<PrepareView> {
       backgroundColor: Colors.grey.shade100,
       body: Stack(
         children: [
-          Spacer(),
-          InkWell(
-            child: SizedBox(
-              width: 500,
-              height: image==null ? 180 : 220,
-              // const(コンパイル定数)を定義できる
-              child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                color: Colors.blue.shade100, // Cardの背景色
-                margin: const EdgeInsets.only(
-                  right: 30,
-                  left: 30,
-                  bottom: 40,
-                ), // Cardの外側の余白を設定するオプション
-                elevation: 2, // 影の離れ具合を調整するオプション
-                shadowColor: Colors.black, // 影の色を設定するオプション
+          Column(
+            children: [
+              Spacer(),
+              InkWell(
+                child: SizedBox(
+                  width: 500,
+                  height: image == null ? 180 : 220,
+                  // const(コンパイル定数)を定義できる
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    color: Colors.blue.shade100, // Cardの背景色
+                    margin: const EdgeInsets.only(
+                      right: 30,
+                      left: 30,
+                      bottom: 40,
+                    ), // Cardの外側の余白を設定するオプション
+                    elevation: 2, // 影の離れ具合を調整するオプション
+                    shadowColor: Colors.black, // 影の色を設定するオプション
 
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: 40, bottom: 10),
-                      child: Text("男の子をえらぶ",
-                          style: TextStyle(
-                            fontFamily: 'AniFont',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Colors.grey.shade800,
-                          )),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(top: 40, bottom: 10),
+                          child: Text("男の子をえらぶ",
+                              style: TextStyle(
+                                fontFamily: 'AniFont',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.grey.shade800,
+                              )),
+                        ),
+                        Container(
+                          width: 120,
+                          child: image == null
+                              ? SizedBox(
+                                  height: 46,
+                                  width: 46,
+                                  child: Container(
+                                    padding: EdgeInsets.zero,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      border: Border.all(
+                                          color: Colors.white, width: 2),
+                                      color: Colors.grey.shade100,
+                                    ),
+                                    child: Icon(
+                                      Icons.camera_alt_outlined,
+                                      color: Colors.grey.shade500,
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: CircleAvatar(
+                                    child: ClipOval(
+                                      child: Image.file(
+                                        image!,
+                                        width: 100,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                        ),
+                      ],
                     ),
-                    Container(
-                        width: 120,
-                        child: image == null
-                            ? SizedBox(
-                          height: 46,
-                          width: 46,
-                          child: Container(
-                            padding: EdgeInsets.zero,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(color: Colors.white, width: 2),
-                              color: Colors.grey.shade100,
-                            ),
-                            child: Icon(
-                              Icons.camera_alt_outlined,
-                              color: Colors.grey.shade500,
-                            ),
-                          ),
-                        )
-                            : Image.file(image!)
-                    ),
-
-                  ],
+                  ),
                 ),
+                onTap: () {
+                  getImageFromGallery();
+                },
               ),
-            ),
-            onTap: () {
-              getImageFromGallery();
-            },
-          ),
+              InkWell(
+                child: SizedBox(
+                  width: 500,
+                  height: image2 == null ? 180 : 220,
+                  // const(コンパイル定数)を定義できる
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    color: Colors.pink.shade100, // Cardの背景色
+                    margin: const EdgeInsets.only(
+                      right: 30,
+                      left: 30,
+                      bottom: 40,
+                    ), // Cardの外側の余白を設定するオプション
+                    elevation: 2, // 影の離れ具合を調整するオプション
+                    shadowColor: Colors.black, // 影の色を設定するオプション
 
-          InkWell(
-            child: SizedBox(
-              width: 500,
-              height: image2==null ? 180 : 220,
-              // const(コンパイル定数)を定義できる
-              child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                color: Colors.pink.shade100, // Cardの背景色
-                margin: const EdgeInsets.only(
-                  right: 30,
-                  left: 30,
-                  bottom: 40,
-                ), // Cardの外側の余白を設定するオプション
-                elevation: 2, // 影の離れ具合を調整するオプション
-                shadowColor: Colors.black, // 影の色を設定するオプション
-
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: 40, bottom: 10),
-                      child: Text("女の子をえらぶ",
-                          style: TextStyle(
-                            fontFamily: 'AniFont',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Colors.grey.shade800,
-                          )),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(top: 40, bottom: 10),
+                          child: Text("女の子をえらぶ",
+                              style: TextStyle(
+                                fontFamily: 'AniFont',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.grey.shade800,
+                              )),
+                        ),
+                        Container(
+                          width: 120,
+                          child: image2 == null
+                              ? SizedBox(
+                                  height: 46,
+                                  width: 46,
+                                  child: Container(
+                                    padding: EdgeInsets.zero,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      border: Border.all(
+                                          color: Colors.white, width: 2),
+                                      color: Colors.grey.shade100,
+                                    ),
+                                    child: Icon(
+                                      Icons.camera_alt_outlined,
+                                      color: Colors.grey.shade500,
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: CircleAvatar(
+                                    child: ClipOval(
+                                      child: Image.file(
+                                        image2!,
+                                        width: 100,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                        ),
+                      ],
                     ),
-                    Container(
-                        width: 120,
-                        child: image2 == null
-                            ? SizedBox(
-                          height: 46,
-                          width: 46,
-                          child: Container(
-                            padding: EdgeInsets.zero,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(color: Colors.white, width: 2),
-                              color: Colors.grey.shade100,
-                            ),
-                            child: Icon(
-                              Icons.camera_alt_outlined,
-                              color: Colors.grey.shade500,
-                            ),
-                          ),
-                        )
-                            : Image.file(image2!)
-                    ),
-
-                  ],
+                  ),
                 ),
+                onTap: () {
+                  getImageFromGallery2();
+                },
               ),
-            ),
-            onTap: () {
-              getImageFromGallery2();
-            },
-          ),
-
-          InkWell(
-            onTap: () {
+              InkWell(
+                onTap: () {
                   handleClick(
                     'ずーーーっと、なかよし☺︎',
                     'assets/images/resultImage1.jpeg',
                     '海デートに行ったときの写真！\nこの後はしゃぎ過ぎて、\nふたりでびしょびしょになったよね笑',
                   );
-            },
-            onDoubleTap: () {
+                },
+                onDoubleTap: () {
                   handleClick(
                     '制服の思い出🫶',
                     'assets/images/resultImage2.jpeg',
                     '学校帰りに撮ってもらった写真📷\n毎日一緒に帰るの、\n楽しかったなあ〜！',
                   );
-            },
-            child: Button('思い出作成！'),
+                },
+                child: Button('思い出作成！'),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Button('もどる'),
+              ),
+              Spacer(),
+            ],
+          ),
+          Visibility(
+            visible: isVisible,
+            child: Container(
+              color: const Color(0x55000000),
+              child: Center(
+                child: LoadingAnimationWidget.inkDrop(
+                  //この部分
+                  color: Colors.white,
+                  size: 100,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
-
