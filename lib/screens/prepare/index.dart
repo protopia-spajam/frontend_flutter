@@ -51,7 +51,21 @@ class _PrepareViewState extends State<PrepareView> {
         children: [
           Column(
             children: [
-              Spacer(),
+              const Spacer(),
+              Center(
+                child: Container(
+                  margin: const EdgeInsets.all(20),
+                  child: const Text(
+                    '新しく作る思い出の登場人物を設定してください！',
+                    style: TextStyle(
+                      fontFamily: 'AniFont',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Color(0xFF212121),
+                    ),
+                  ),
+                ),
+              ),
               InkWell(
                 child: men_women_select("男の子をえらぶ", Colors.blue),
                 onTap: () {
@@ -87,7 +101,7 @@ class _PrepareViewState extends State<PrepareView> {
                 },
                 child: Button('もどる'),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
           Visibility(
@@ -142,7 +156,7 @@ class men_women_select extends StatelessWidget {
                     fontFamily: 'AniFont',
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Colors.grey.shade800,
+                    color: Colors.grey.shade900,
                   )),
             ),
             SizedBox(
