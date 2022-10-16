@@ -1,6 +1,3 @@
-///HomeView
-///HomeViewではユーザーが恋人モードか友達・家族モードを選択することができる
-
 import 'package:flutter/material.dart';
 import 'package:spajam2022/screens/prepare/index.dart';
 import 'package:spajam2022/components/background/index.dart';
@@ -29,9 +26,9 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 mode_select_button("恋人モード", "過去に好きだった人と勝手に付き合いませんか？",
-                    "assets/images/love.jpeg"),
+                    "https://d3cmdai71kklhc.cloudfront.net/post_watermark/marketplace/23717/mp_20161011-130104721_i3hut.jpg"),
                 mode_select_button("友達・家族モード", "友達・家族との楽しい思い出を作りませんか？",
-                    "assets/images/family.jpeg"),
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8rTuqMVFww1hBVW2HRZ90E9RId2o_t3znQw&usqp=CAU"),
                 // Spacer(),
               ],
             ),
@@ -42,7 +39,6 @@ class HomeView extends StatelessWidget {
   }
 }
 
-//恋人モードか友達・家族モードを選ぶ際のカードレイアウト
 class mode_select_button extends StatelessWidget {
   String mode_name = "";
   String description = "";
@@ -56,8 +52,8 @@ class mode_select_button extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: SizedBox(
-        width: 520,
-        height: 200,
+        width: 500,
+        height: 220,
         // const(コンパイル定数)を定義できる
         child: Card(
           shape:
@@ -73,10 +69,9 @@ class mode_select_button extends StatelessWidget {
           shadowColor: Colors.black, // 影の色を設定するオプション
           child: Row(
             children: <Widget>[
-              Image.asset(
+              Image.network(
                 this.url,
-                width: 170,
-
+                width: 150,
               ),
               Expanded(
                   child: Container(
