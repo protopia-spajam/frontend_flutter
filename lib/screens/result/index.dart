@@ -1,3 +1,6 @@
+///ResultView
+///変換後の画像とテキストが表示される
+
 import 'package:flutter/material.dart';
 import 'package:spajam2022/components/button/index.dart';
 
