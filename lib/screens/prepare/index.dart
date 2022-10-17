@@ -67,6 +67,20 @@ class _PrepareViewState extends State<PrepareView> {
           Column(
             children: [
               Spacer(),
+              Center(
+                child: Container(
+                  margin: const EdgeInsets.all(20),
+                  child: const Text(
+                    '新しく作る思い出の登場人物を設定してください！',
+                    style: TextStyle(
+                      fontFamily: 'AniFont',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Color(0xFF212121),
+                    ),
+                  ),
+                ),
+              ),
               InkWell(
                 child: SizedBox(
                   width: 500,
