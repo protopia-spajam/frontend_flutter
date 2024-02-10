@@ -2,26 +2,18 @@
 ///変換後の画像とテキストが表示される
 
 import 'package:flutter/material.dart';
-import 'package:spajam2022/components/button/index.dart';
+import 'package:spajam2022/components/button.dart';
 
 class ResultView extends StatelessWidget {
-  String title = '';
-  String imageURL = '';
-  String message = '';
-  ResultView(
-    String title,
-    String imageURL,
-    String message,
-  ) {
-    this.title = title;
-    this.imageURL = imageURL;
-    this.message = message;
-  }
+  final String title;
+  final String imageURL;
+  final String message;
+  const ResultView(this.title, this.imageURL, this.message, {super.key});
 
   // 投稿の部分
   Widget _buildPost(int index) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       child: Container(
         width: double.infinity,
         height: 560.0,
@@ -32,17 +24,17 @@ class ResultView extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0),
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: Column(
                 children: <Widget>[
                   ListTile(
                     leading: Container(
                       width: 50.0,
                       height: 50.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                         child: ClipOval(
                           child: Image(
                             height: 50.0,
@@ -55,21 +47,25 @@ class ResultView extends StatelessWidget {
                     ),
                     title: Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Text('5分前'),
+                    subtitle: const Text('5分前'),
                     trailing: IconButton(
-                      icon: Icon(Icons.more_horiz),
+                      icon: const Icon(Icons.more_horiz),
                       color: Colors.black,
-                      onPressed: () => print('More'),
+                      onPressed: () => {
+                        // print('More')
+                      },
                     ),
                   ),
                   InkWell(
-                    onDoubleTap: () => print('Like post'),
+                    onDoubleTap: () => {
+                      // print('Like post')
+                    },
                     child: Container(
-                      margin: EdgeInsets.all(5.0),
+                      margin: const EdgeInsets.all(5.0),
                       width: double.infinity,
                       height: 400.0,
                       decoration: BoxDecoration(
@@ -82,7 +78,7 @@ class ResultView extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -91,11 +87,13 @@ class ResultView extends StatelessWidget {
                             Row(
                               children: <Widget>[
                                 IconButton(
-                                  icon: Icon(Icons.favorite_border),
+                                  icon: const Icon(Icons.favorite_border),
                                   iconSize: 30.0,
-                                  onPressed: () => print('Like post'),
+                                  onPressed: () => {
+                                    // print('Like post')
+                                  },
                                 ),
-                                Text(
+                                const Text(
                                   '2,515',
                                   style: TextStyle(
                                     fontSize: 14.0,
@@ -104,15 +102,15 @@ class ResultView extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(width: 20.0),
+                            const SizedBox(width: 20.0),
                             Row(
                               children: <Widget>[
                                 IconButton(
-                                  icon: Icon(Icons.chat),
+                                  icon: const Icon(Icons.chat),
                                   iconSize: 30.0,
                                   onPressed: () {},
                                 ),
-                                Text(
+                                const Text(
                                   '350',
                                   style: TextStyle(
                                     fontSize: 14.0,
@@ -124,9 +122,11 @@ class ResultView extends StatelessWidget {
                           ],
                         ),
                         IconButton(
-                          icon: Icon(Icons.bookmark_border),
+                          icon: const Icon(Icons.bookmark_border),
                           iconSize: 30.0,
-                          onPressed: () => print('Save post'),
+                          onPressed: () => {
+                            // print('Save post')
+                          },
                         ),
                       ],
                     ),
@@ -142,18 +142,17 @@ class ResultView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFEDF0F6),
+      backgroundColor: const Color(0xFFEDF0F6),
       body: ListView(
-        physics: AlwaysScrollableScrollPhysics(),
+        physics: const AlwaysScrollableScrollPhysics(),
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
+                const Text(
                   'Katteni Omoide Maker',
                   style: TextStyle(
                     fontFamily: 'Billabong',
@@ -163,17 +162,21 @@ class ResultView extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.live_tv),
+                      icon: const Icon(Icons.live_tv),
                       iconSize: 30.0,
-                      onPressed: () => print('IGTV'),
+                      onPressed: () => {
+                        // print('IGTV')
+                      },
                     ),
-                    SizedBox(width: 16.0),
-                    Container(
+                    const SizedBox(width: 16.0),
+                    SizedBox(
                       width: 35.0,
                       child: IconButton(
-                        icon: Icon(Icons.send),
+                        icon: const Icon(Icons.send),
                         iconSize: 30.0,
-                        onPressed: () => print('Direct Messages'),
+                        onPressed: () => {
+                          // print('Direct Messages')
+                        },
                       ),
                     )
                   ],
@@ -184,7 +187,7 @@ class ResultView extends StatelessWidget {
           _buildPost(0),
           Center(
             child: Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 20,
                 right: 5,
                 bottom: 20,
@@ -192,7 +195,7 @@ class ResultView extends StatelessWidget {
               ),
               child: Text(
                 message,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'AniFont',
                   fontSize: 23,
                 ),
@@ -207,7 +210,7 @@ class ResultView extends StatelessWidget {
                   int count = 0;
                   Navigator.of(context).popUntil((_) => count++ >= 2);
                 },
-                child: Button('ホームにもどる'),
+                child: const Button('ホームにもどる'),
               ),
             ],
           ),

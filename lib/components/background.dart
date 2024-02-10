@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:spajam2022/utils/style.dart';
 
 class BackGround extends StatelessWidget {
+  const BackGround({super.key});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -22,7 +24,7 @@ class BackGround extends StatelessWidget {
           ],
         ),
       ),
-      child: Stack(
+      child: const Stack(
         children: [
           // Circle(size.width, 0, 0, kColorWhite),
           Circle(125, 40, 90, kColorRed),
@@ -36,21 +38,11 @@ class BackGround extends StatelessWidget {
 }
 
 class Circle extends StatelessWidget {
-  double size = 0;
-  double x = 0;
-  double y = 0;
-  Color color = Color(0xffffffff);
-  Circle(
-    double size,
-    double x,
-    double y,
-    Color color,
-  ) {
-    this.size = size;
-    this.x = x;
-    this.y = y;
-    this.color = color;
-  }
+  final double size;
+  final double x;
+  final double y;
+  final Color color;
+  const Circle(this.size, this.x, this.y, this.color, {super.key});
 
   @override
   Widget build(BuildContext context) {

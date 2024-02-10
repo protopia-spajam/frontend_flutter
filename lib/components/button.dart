@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:spajam2022/utils/style.dart';
 
 class Button extends StatelessWidget {
-  String value = '';
-  Button(String value) {
-    this.value = value;
-  }
+  final String value;
+  const Button(this.value, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +11,7 @@ class Button extends StatelessWidget {
     //   child: Text('button'),
     // );
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         bottom: 15,
       ),
       width: 200,

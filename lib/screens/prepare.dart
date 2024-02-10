@@ -5,11 +5,13 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import 'package:spajam2022/components/button/index.dart';
-import 'package:spajam2022/screens/result/index.dart';
+import 'package:spajam2022/components/button.dart';
+import 'package:spajam2022/screens/result.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class PrepareView extends StatefulWidget {
+  const PrepareView({super.key});
+
   @override
   State<PrepareView> createState() => _PrepareViewState();
 }
@@ -66,7 +68,7 @@ class _PrepareViewState extends State<PrepareView> {
         children: [
           Column(
             children: [
-              Spacer(),
+              const Spacer(),
               Center(
                 child: Container(
                   margin: const EdgeInsets.all(20),
@@ -101,7 +103,7 @@ class _PrepareViewState extends State<PrepareView> {
                     child: Column(
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.only(top: 40, bottom: 10),
+                          padding: const EdgeInsets.only(top: 40, bottom: 10),
                           child: Text("男の子をえらぶ",
                               style: TextStyle(
                                 fontFamily: 'AniFont',
@@ -110,7 +112,7 @@ class _PrepareViewState extends State<PrepareView> {
                                 color: Colors.grey.shade800,
                               )),
                         ),
-                        Container(
+                        SizedBox(
                           width: 120,
                           child: image == null
                               ? SizedBox(
@@ -133,7 +135,7 @@ class _PrepareViewState extends State<PrepareView> {
                               : Container(
                                   width: 100.0,
                                   height: 100.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
                                   child: CircleAvatar(
@@ -175,7 +177,7 @@ class _PrepareViewState extends State<PrepareView> {
                     child: Column(
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.only(top: 40, bottom: 10),
+                          padding: const EdgeInsets.only(top: 40, bottom: 10),
                           child: Text("女の子をえらぶ",
                               style: TextStyle(
                                 fontFamily: 'AniFont',
@@ -184,7 +186,7 @@ class _PrepareViewState extends State<PrepareView> {
                                 color: Colors.grey.shade800,
                               )),
                         ),
-                        Container(
+                        SizedBox(
                           width: 120,
                           child: image2 == null
                               ? SizedBox(
@@ -207,7 +209,7 @@ class _PrepareViewState extends State<PrepareView> {
                               : Container(
                                   width: 100.0,
                                   height: 100.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
                                   child: CircleAvatar(
@@ -244,15 +246,15 @@ class _PrepareViewState extends State<PrepareView> {
                     '学校帰りに撮ってもらった写真📷\n毎日一緒に帰るの、\n楽しかったなあ〜！',
                   );
                 },
-                child: Button('思い出作成！'),
+                child: const Button('思い出作成！'),
               ),
               InkWell(
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: Button('もどる'),
+                child: const Button('もどる'),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
           Visibility(
